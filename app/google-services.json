@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "695928841908",
+    "firebase_url": "https://nightmarespubgreferencemanual.firebaseio.com",
+    "project_id": "nightmarespubgreferencemanual",
+    "storage_bucket": "nightmarespubgreferencemanual.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695928841908:android:99137b5a0f73007b",
+        "android_client_info": {
+          "package_name": "michael_juarez.pubgreferencemanual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695928841908-a3de456crjqp4bo7el6ro9n8ao70eqb1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "michael_juarez.pubgreferencemanual",
+            "certificate_hash": "fa05f2ba732a491f4003796628678be715ac69ca"
+          }
+        },
+        {
+          "client_id": "695928841908-qp44cvtgbimulbddaep51vf5dtge20nq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ8Wo5JYPJDVG9yobmv1uOZdb3Nk-INaE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695928841908-qp44cvtgbimulbddaep51vf5dtge20nq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

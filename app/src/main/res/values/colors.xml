@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- App Colors -->
+    <color name="pubBGGray">#3f515a</color>
+    <color name="pubCardBGGray">#1f272c</color>
+    <color name="pubCardBottomHalfGray">#1a2126</color>
+    <color name="pubTopHalfGray">#252f35</color>
+    <color name="pubOrange">#e1961b</color>
+    <color name="pubYellow">#f8f249</color>
+    <color name="pubWhite">#efefef</color>
+</resources>
