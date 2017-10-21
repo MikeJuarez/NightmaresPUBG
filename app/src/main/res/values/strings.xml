@@ -9,5 +9,6 @@
     <string name="PLAYER_RANK">PLAYER RANK</string>
     <string name="MAP">MAP</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="json_marker_http_location">https://raw.githubusercontent.com/MikeJuarez/NightmaresPUBG/master/json/marker_locations.json</string>
 </resources>
 

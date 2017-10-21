@@ -2,9 +2,9 @@
   "vehicles": {
     "vehicle_red" : {
       "1" : {
-        "long" : 10,
-        "lat"  : 10,
-        "title" : "Vehicle (High Chance"
+        "x" : -31.90,
+        "y"  : 115.86,
+        "title" : "Vehicle (High Chance)"
       }
     }
   }
