@@ -10,6 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import nightmares.pubg_quick_reference_guide.R;
 import nightmares.pubg_quick_reference_guide.fragment.MainScreen_Fragment;
+import nightmares.pubg_quick_reference_guide.presenter.PubgMarkerPresenter;
 
 import static android.R.attr.id;
 

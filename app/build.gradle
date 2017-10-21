@@ -17,7 +17,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/NOTICE'
+    }
 }
+
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -40,6 +47,9 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     compile 'com.google.code.gson:gson:2.8.2'
+    compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
+
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
 
     testCompile 'junit:junit:4.12'
 }

@@ -25,7 +25,8 @@ import java.util.Locale;
 
 
 import nightmares.pubg_quick_reference_guide.R;
-import nightmares.pubg_quick_reference_guide.model.PubgMarker;
+import nightmares.pubg_quick_reference_guide.model.Vehicles;
+import nightmares.pubg_quick_reference_guide.presenter.PubgMarkerPresenter;
 
 import static nightmares.pubg_quick_reference_guide.R.id.map;
 
@@ -33,12 +34,14 @@ import static nightmares.pubg_quick_reference_guide.R.id.map;
  * Created by user on 10/4/2017.
  */
 
-public class Map_Fragment extends Fragment implements OnMapReadyCallback{
+public class Map_Fragment extends Fragment implements OnMapReadyCallback, PubgMarkerPresenter.UpdateMarkersInterface{
 
     private static final String MOON_MAP_URL_FORMAT =
             "https://raw.githubusercontent.com/MikeJuarez/PUBGQuickReferenceGuide/master/map/%d_%d_%d.png";
 
     private TileOverlay mMoonTiles;
+    private PubgMarkerPresenter mPubgMarkerPresenter;
+    private GoogleMap mGoogleMap;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,25 +50,22 @@ public class Map_Fragment extends Fragment implements OnMapReadyCallback{
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(map);
         mapFragment.getMapAsync(this);
+
+        mPubgMarkerPresenter = PubgMarkerPresenter.getInstance(getActivity(), this);
         return view;
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
-        map.setMapType(GoogleMap.MAP_TYPE_NONE);
-        map.getUiSettings().setZoomControlsEnabled(true);
+        mGoogleMap = map;
 
-        map.setMinZoomPreference(0);
-        map.setMaxZoomPreference(5);
+        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+        mGoogleMap.getUiSettings().setZoomControlsEnabled(true);
 
-        PubgMarker mPubgMarker = new PubgMarker();
+        mGoogleMap.setMinZoomPreference(0);
+        mGoogleMap.setMaxZoomPreference(5);
 
-        Marker newMarker = map.addMarker(new MarkerOptions()
-                .position(new LatLng(10, 10))
-                .title("Hello world")
-                .draggable(true));
-
-        map.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
+        mGoogleMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
             @Override
             public void onMarkerDragStart(Marker marker) {
 
@@ -81,6 +81,7 @@ public class Map_Fragment extends Fragment implements OnMapReadyCallback{
                 Log.d("Marker Position: ", "" + marker.getPosition());
             }
         });
+
         TileProvider tileProvider = new UrlTileProvider(1350, 1350) {
             @Override
             public synchronized URL getTileUrl(int x, int y, int zoom) {
@@ -96,7 +97,7 @@ public class Map_Fragment extends Fragment implements OnMapReadyCallback{
             }
         };
 
-        mMoonTiles = map.addTileOverlay(new TileOverlayOptions().tileProvider(tileProvider));
+        mMoonTiles = mGoogleMap.addTileOverlay(new TileOverlayOptions().tileProvider(tileProvider));
     }
 
 
@@ -105,5 +106,20 @@ public class Map_Fragment extends Fragment implements OnMapReadyCallback{
             return;
         }
         mMoonTiles.setFadeIn(((CheckBox) v).isChecked());
+    }
+
+    @Override
+    public void updateMarkers() {
+        if (mPubgMarkerPresenter.getVehicleList() != null) {
+            Vehicles vehicles = mPubgMarkerPresenter.getVehicleList().get(0);
+            Long xPos = vehicles.getX();
+            Long yPos = vehicles.getY();
+            String pubgTitle = vehicles.getTitle();
+
+            mGoogleMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(xPos, yPos))
+                    .title(pubgTitle)
+                    .draggable(true));
+        }
     }
 }
