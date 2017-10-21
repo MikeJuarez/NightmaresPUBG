@@ -1,7 +1,7 @@
 {
-	"Vehicles": [{
-	  "x": -31.9,
-	  "y": 115.86,
-	  "title": "Vehicle (High Chance)"
-	}]
+  "Vehicles": {
+    "x": 100,
+    "y": 105,
+    "title": "Vehicle"
+  }
 }
