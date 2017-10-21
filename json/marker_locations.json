@@ -5,7 +5,7 @@
      "y": -5.0,
      "title": "Vehicle"},
     {"x": 5.0,
-     "y": 0.0,
+     "y": -10.0,
      "title": "Vehicle"}
   ]
 }
