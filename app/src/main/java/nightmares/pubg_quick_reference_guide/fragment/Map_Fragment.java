@@ -25,6 +25,8 @@ import java.util.Locale;
 
 
 import nightmares.pubg_quick_reference_guide.R;
+import nightmares.pubg_quick_reference_guide.model.PubgMarker;
+
 import static nightmares.pubg_quick_reference_guide.R.id.map;
 
 /**
@@ -55,6 +57,8 @@ public class Map_Fragment extends Fragment implements OnMapReadyCallback{
 
         map.setMinZoomPreference(0);
         map.setMaxZoomPreference(5);
+
+        PubgMarker mPubgMarker = new PubgMarker();
 
         Marker newMarker = map.addMarker(new MarkerOptions()
                 .position(new LatLng(10, 10))

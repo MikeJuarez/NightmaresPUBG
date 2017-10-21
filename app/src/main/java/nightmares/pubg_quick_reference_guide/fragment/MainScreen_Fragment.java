@@ -76,8 +76,6 @@ public class MainScreen_Fragment extends Fragment {
         Glide.with(getActivity()).load("https://i.imgur.com/WaQdqWS.png").into(mPlayerRankImageView);
         Glide.with(getActivity()).load("https://i.imgur.com/hPoHfWT.png").into(mMapImageView);
         //
-
-
     }
 
     @OnClick(R.id.main_screen_map)

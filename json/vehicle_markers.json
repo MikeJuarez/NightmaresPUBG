@@ -1,0 +1,13 @@
+{
+  vehicles: [
+    {
+      icontype: "vehicle",
+      positionX: "-31.90",
+      positionY: "115.86)",
+      title: "Vehicle Marker",
+      chance: "medium",
+      icon:
+      snippet: "Medium Chance a Vehicle will spawn here"
+    }
+  ]
+}

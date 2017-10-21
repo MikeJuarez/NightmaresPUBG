@@ -1,0 +1,11 @@
+{
+  "vehicles": {
+    "vehicle_red" : {
+      "1" : {
+        "long" : 10,
+        "lat"  : 10,
+        "title" : "Vehicle (High Chance"
+      }
+    }
+  }
+}
