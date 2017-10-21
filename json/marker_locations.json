@@ -1,11 +1,8 @@
 {
-  "Vehicles": {
-    "mVehiclesRed": {
-      "mVehicle": {
-        "mX" : -31.90,
-        "mY"  : 115.86,
-        "mTitle" : "Vehicle (High Chance)"
-      }
-    }
+  "mVehicle": {
+    "mX" : -31.90,
+    "mY"  : 115.86,
+    "mTitle" : "Vehicle (High Chance)"
   }
 }
+
