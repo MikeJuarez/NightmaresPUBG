@@ -14,29 +14,27 @@ public class HighLoot {
     private final int strokeWidth = R.dimen.map_filter_circle_stroke_width;
     private final int fillColor = R.color.pubRed;
 
-    @SerializedName("center")
+    @SerializedName("x")
     @Expose
-    private LatLng center;
+    private float x;
+
+    @SerializedName("y")
+    @Expose
+    private float y;
+    @SerializedName("title")
+    @Expose
+    private String title;
 
     @SerializedName("radiusMeters")
     @Expose
     private double radiusMeters;
-
-    public LatLng getCenter() {
-        return center;
-    }
-
-    public void setCenter(LatLng center) {
-        this.center = center;
-    }
 
     public double getRadiusMeters() {
         return radiusMeters;
     }
 
     public void setRadiusMeters(double radiusMeters) {
-        this.radiusMeters = radiusMeters;
-    }
+        this.radiusMeters = radiusMeters;    }
 
     public int getStrokeWidth() {
         return strokeWidth;
@@ -46,6 +44,29 @@ public class HighLoot {
         return fillColor;
     }
 
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
 
 
