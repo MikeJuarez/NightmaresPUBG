@@ -12,4 +12,6 @@
     <color name="pubOrange">#e1961b</color>
     <color name="pubYellow">#f8f249</color>
     <color name="pubWhite">#efefef</color>
+    <color name="pubRed">#d60a0a</color>
+
 </resources>

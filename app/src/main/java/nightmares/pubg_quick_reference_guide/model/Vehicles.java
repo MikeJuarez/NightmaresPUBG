@@ -1,54 +1,27 @@
 package nightmares.pubg_quick_reference_guide.model;
 
-import static android.R.attr.x;
-import static android.R.attr.y;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 /**
  * Created by user on 10/21/2017.
  */
 
+
 public class Vehicles {
-        long mX;
-        long mY;
-        String mTitle;
 
-        public Vehicles(int x, int y, String title) {
-            mX = x;
-            mY = y;
-            mTitle = title;
-        }
+    @SerializedName("Vehicles")
+    @Expose
+    private List<HighVehicle> mHighVehicles = null;
 
-        public long getX() {
-            return mX;
-        }
+    public List<HighVehicle> getHighVehicles() {
+        return mHighVehicles;
+    }
 
-        public long getY() {
-            return mY;
-        }
-
-        public String getTitle() {
-            return mTitle;
-        }
+    public void setHighVehicles(List<HighVehicle> highVehicles) {
+        this.mHighVehicles = highVehicles;
+    }
 }
 
-/*    public VehiclesRed mVehiclesRed;
-
-    public Vehicles(VehiclesRed vehiclesRed) {
-        mVehiclesRed = vehiclesRed;
-    }
-
-    public VehiclesRed getVehiclesRed() {
-        return mVehiclesRed;
-    }
-
-    public class VehiclesRed {
-        public Vehicle mVehicle;
-
-        public VehiclesRed(Vehicle vehicle) {
-            mVehicle = vehicle;
-        }
-
-        public Vehicle getVehicle() {
-            return mVehicle;
-        }
-    }*/

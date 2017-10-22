@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/map_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:id="@+id/map_container"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+
     <fragment
         android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.google.android.gms.maps.SupportMapFragment" />
-</RelativeLayout>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/map_filter_ll"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <LinearLayout
+        android:id="@+id/map_filter_ll"
+        android:background="?colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/map_filter_vehicles_red_iv"
+            android:layout_width="@dimen/map_filter_icon_width"
+            android:layout_height="@dimen/map_filter_icon_height"
+            android:src="@drawable/map_icon_vehicles_red_green"
+            android:layout_marginTop="@dimen/map_filter_margin_top"
+            android:layout_marginLeft="@dimen/map_filter_margin_left"
+            android:layout_marginBottom="@dimen/map_filter_margin_bottom"/>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
